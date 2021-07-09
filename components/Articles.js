@@ -1,7 +1,7 @@
 import useArticles from "../hooks/use-articles";
 import styles from "../styles/Articles.module.css";
 
-import SkeletonElement from "../skeletons/SkeletonElement";
+import SkeletonArticle from "../skeletons/SkeletonArticle";
 
 const Articles = () => {
   const { data, error } = useArticles();
@@ -9,11 +9,6 @@ const Articles = () => {
   return (
     <div>
       <h2 className={styles.header}>Articles</h2>
-
-      <SkeletonElement type="title" />
-      <SkeletonElement type="text" />
-      <SkeletonElement type="avatar" />
-      <SkeletonElement type="thumbnail" />
 
       {data &&
         data.map((article) => (
@@ -23,7 +18,10 @@ const Articles = () => {
           </div>
         ))}
 
-      {!data && <div>Loading...</div>}
+      {!data &&
+        Array(5)
+          .fill()
+          .map((_, i) => <SkeletonArticle key={i} />)}
     </div>
   );
 };
