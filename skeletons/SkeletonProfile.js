@@ -2,17 +2,18 @@ import styles from "../styles/SkeletonProfile.module.css";
 import SkeletonElement from "./SkeletonElement";
 import SkeletonWrapper from "./SkeletonWrapper";
 
-const SkeletonProfile = () => {
+const SkeletonProfile = ({ theme }) => {
+  const themeClass = theme || "light";
   return (
-    <SkeletonWrapper>
+    <SkeletonWrapper theme={themeClass}>
       <div className={styles.profile}>
         <div>
-          <SkeletonElement type="avatar" />
+          <SkeletonElement type="avatar" theme={themeClass} />
         </div>
         <div>
-          <SkeletonElement type="title" />
-          <SkeletonElement type="text" />
-          <SkeletonElement type="text" />
+          <SkeletonElement type="title" theme={themeClass} />
+          <SkeletonElement type="text" theme={themeClass} />
+          <SkeletonElement type="text" theme={themeClass} />
         </div>
       </div>
     </SkeletonWrapper>

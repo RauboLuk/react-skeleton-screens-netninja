@@ -21,7 +21,7 @@ const Articles = () => {
       {!data &&
         Array(5)
           .fill()
-          .map((_, i) => <SkeletonArticle key={i} />)}
+          .map((_, i) => <SkeletonArticle key={i} theme="dark" />)}
     </div>
   );
 };

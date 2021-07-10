@@ -1,7 +1,12 @@
 import styles from "../styles/SkeletonElement.module.css";
 
-const SkeletonElement = ({ type }) => {
-  return <div className={`${styles.skeleton} ${styles[type]}`}></div>;
+const SkeletonElement = ({ type, theme }) => {
+  console.log(theme);
+  return (
+    <div
+      className={`${styles.skeleton} ${styles[type]} ${styles[theme]}`}
+    ></div>
+  );
 };
 
 export default SkeletonElement;
