@@ -1,6 +1,7 @@
 import useUser from "../hooks/use-user";
 import styles from "../styles/User.module.css";
 import Link from "next/link";
+import SkeletonProfile from "../skeletons/SkeletonProfile";
 
 const User = () => {
   const { data, error } = useUser();
@@ -19,7 +20,7 @@ const User = () => {
         </div>
       )}
 
-      {!data && <div>Loading...</div>}
+      {!data && <SkeletonProfile />}
     </div>
   );
 };
